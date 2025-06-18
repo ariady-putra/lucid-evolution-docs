@@ -329,6 +329,7 @@ export default function AnimatedCode({ code, style }) {
         </code>
       </pre>
       <div
+        className="overflow-hidden"
         style={{
           padding: "12px 16px",
           backgroundColor: "#2d2d2d",
@@ -385,6 +386,7 @@ export default function AnimatedCode({ code, style }) {
         {showConfirmation && (
           <div style={{ animation: "fadeIn 0.5s ease-in-out" }}>
             <div
+              className="items-center"
               style={{
                 maxWidth: isMobile ? "100%" : "49%",
                 // margin: isMobile ? "4px 0" : "0 0px",
@@ -398,7 +400,7 @@ export default function AnimatedCode({ code, style }) {
                 fontSize: isMobile ? "10px" : "inherit",
               }}
             >
-              <span style={{ marginRight: "5px", whiteSpace: "nowrap" }}>
+              <span className="my-auto" style={{ marginRight: "5px", whiteSpace: "nowrap" }}>
                 Tx Hash:
               </span>
               <span
