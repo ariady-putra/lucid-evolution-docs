@@ -12,7 +12,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   description: "A highly scalable transaction building framework for Cardano",
-  metadataBase: new URL("https://anastasia-labs.github.io/lucid-evolution"),
+  metadataBase: new URL("https://no-witness-labs.github.io/lucid-evolution"),
   keywords: [
     "Lucid",
     "Evolution",

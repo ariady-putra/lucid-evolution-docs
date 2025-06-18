@@ -15,11 +15,11 @@ export default function Logo() {
 
   return <Image
     src={
-      !mounted ? "/lucid-evolution/al-logo.png" :
-        resolvedTheme === "light" ? "/lucid-evolution/al-logo-dark.png" :
-          resolvedTheme === "dark" ? "/lucid-evolution/al-logo.png" :
-            systemTheme === "light" ? "/lucid-evolution/al-logo-dark.png" :
-              "/lucid-evolution/al-logo.png"}
+      !mounted ? "/lucid-evolution-docs/al-logo.png" :
+        resolvedTheme === "light" ? "/lucid-evolution-docs/al-logo-dark.png" :
+          resolvedTheme === "dark" ? "/lucid-evolution-docs/al-logo.png" :
+            systemTheme === "light" ? "/lucid-evolution-docs/al-logo-dark.png" :
+              "/lucid-evolution-docs/al-logo.png"}
     alt="Anastasia Labs Logo"
     className="mr-4"
     width="200"

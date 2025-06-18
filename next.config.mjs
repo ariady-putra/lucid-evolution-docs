@@ -36,7 +36,7 @@ const withNextra = nextra({
 });
 
 export default withNextra({
-  basePath: "/lucid-evolution",
+  basePath: "/lucid-evolution-docs",
   images: {
     unoptimized: true,
   },

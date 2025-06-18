@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="footer-section logo-section max-w-fit">
         <Link href="https://anastasialabs.com" className="hover:opacity-75">
           <Image
-            src="/lucid-evolution/al-logo.png"
+            src="/lucid-evolution-docs/al-logo.png"
             alt="Anastasia Labs Logo"
             className="footer-logo brightness-0 invert-75 not-dark:invert-50"
             width={180}
