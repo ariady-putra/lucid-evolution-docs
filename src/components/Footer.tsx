@@ -1,15 +1,30 @@
 "use client";
 
 import Image from "next/image";
-import { Link, Footer as NextraFooter } from "nextra-theme-docs";
+import { Link, Footer as NextraFooter, useTheme } from "nextra-theme-docs";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
+  const { resolvedTheme, systemTheme } = useTheme();
+
+  const [mounted, setMounted] = useState(() => false);
+  // setMounted to circumvent SSR Hydration issue
+  useEffect(() => {
+    setMounted(() => true);
+  }, []);
+
   return <NextraFooter className="flex-col items-center">
     <div className="footer-content flex min-w-[75%]">
-      <div className="footer-section logo-section max-w-fit">
+      <div className="footer-section logo-section flex justify-center w-full md:max-w-fit">
         <Link href="https://anastasialabs.com" className="hover:opacity-75">
           <Image
-            src="/lucid-evolution-docs/al-logo.png"
+            src={
+              !mounted ? "/lucid-evolution-docs/al-logo.png" :
+                resolvedTheme === "light" ? "/lucid-evolution-docs/al-logo-dark.png" :
+                  resolvedTheme === "dark" ? "/lucid-evolution-docs/al-logo.png" :
+                    systemTheme === "light" ? "/lucid-evolution-docs/al-logo-dark.png" :
+                      "/lucid-evolution-docs/al-logo.png"
+            }
             alt="Anastasia Labs Logo"
             className="footer-logo brightness-0 invert-75 not-dark:invert-50"
             width={180}
