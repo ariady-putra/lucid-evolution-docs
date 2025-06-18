@@ -28,9 +28,9 @@ const IndexPage: FC = () => {
           title="Lucid"
           subtitle="A highly scalable transaction building framework for Cardano"
           ctaText="Start here"
-          ctaLink="/install"
+          ctaLink="lucid-evolution-docs/install"
           ctaText2="Learn more"
-          ctaLink2="/documentation/about"
+          ctaLink2="lucid-evolution-docs/documentation/about"
         />
       </div>
     </header>
