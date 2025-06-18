@@ -61,7 +61,7 @@ lucid.selectWallet.fromSeed(seedPhrase);
 const tx = await lucid
   .newTx()
   .pay.ToAddress("addr_test1...", { lovelace: 10_000_000n })
-  .pay.ToAddress("addr_test2...", { lovelace: 20_000000n })
+  .pay.ToAddress("addr_test2...", { lovelace: 20_000_000n })
   .complete();
 
 const signedTx = await tx.sign.withWallet().complete();
