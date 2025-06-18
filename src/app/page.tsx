@@ -51,8 +51,8 @@ const IndexPage: FC = () => {
               code={`import { Lucid, Koios, generateSeedPhrase } from "@lucid-evolution/lucid";
 
 const lucid = await Lucid(
-  new Koios("https://preprod.koios.rest/api/v1"),
-  "Preprod"
+  new Koios("https://preview.koios.rest/api/v1"),
+  "Preview"
 );
 
 const seedPhrase = generateSeedPhrase();
@@ -60,8 +60,8 @@ lucid.selectWallet.fromSeed(seedPhrase);
 
 const tx = await lucid
   .newTx()
-  .pay.ToAddress("addr_testa...", { lovelace: 5000000n })
-  .pay.ToAddress("addr_testb...", { lovelace: 5000000n })
+  .pay.ToAddress("addr_test1...", { lovelace: 10_000_000n })
+  .pay.ToAddress("addr_test2...", { lovelace: 20_000000n })
   .complete();
 
 const signedTx = await tx.sign.withWallet().complete();

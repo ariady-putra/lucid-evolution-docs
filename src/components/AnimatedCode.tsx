@@ -32,10 +32,10 @@ export default function AnimatedCode({ code, style }) {
 
   const getRandomTypingDelay = () => Math.random() * 50 + 20;
 
-  const lineCount = code.split("\n").length;
+  // const lineCount = code.split("\n").length;
   const lineHeight = 1.3; // em
-  const codeHeight = `${lineCount * lineHeight}em`;
-  const terminalHeight = "120px";
+  const codeHeight = "30em"; // `${lineCount * lineHeight}em`;
+  const terminalHeight = "11em";
   const headerHeight = "40px";
   const componentHeight = `calc(${codeHeight} + ${terminalHeight} + ${headerHeight} - 2em)`;
 
@@ -81,7 +81,7 @@ export default function AnimatedCode({ code, style }) {
 
       await new Promise((resolve) => setTimeout(resolve, 500));
 
-      const command = "run make_payment.ts";
+      const command = "run makePayment.ts";
       for (let i = 0; i < command.length; i++) {
         if (!isMounted) break;
         setTypedCommand((prev) => prev + command[i]);
@@ -215,7 +215,7 @@ export default function AnimatedCode({ code, style }) {
       borderRadius: "8px",
       fontFamily: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace',
       boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-      fontSize: isMobile ? '12px' : '14px',
+      fontSize: isMobile ? "11px" : "14px",
       ...style,
     }}
   >
@@ -235,7 +235,7 @@ export default function AnimatedCode({ code, style }) {
       <span
         style={{
           color: "rgba(255, 255, 255, 0.6)",
-          fontSize: isMobile ? "12px" : "14px",
+          fontSize: isMobile ? "11px" : "14px",
           display: "flex",
           alignItems: "center",
           fontWeight: "400",
@@ -252,7 +252,7 @@ export default function AnimatedCode({ code, style }) {
             fill="currentColor"
           />
         </svg>
-        make_payment.ts
+        makePayment.ts
       </span>
     </div>
 
@@ -272,12 +272,13 @@ export default function AnimatedCode({ code, style }) {
           height: codeHeight,
           overflow: "auto",
           margin: 0,
-          padding: "16px",
+          padding: isMobile ? "12px" : "16px",
           flexGrow: 1,
         }}
       >
         <code
           style={{
+            fontSize: isMobile ? "11px" : "14px",
             whiteSpace: "pre-wrap",
             wordBreak: "break-all",
             overflowWrap: "break-word",
@@ -305,7 +306,7 @@ export default function AnimatedCode({ code, style }) {
                     style.color = "#ff6b6b";
                   }
                   return (
-                    <span key={partIndex} style={style}>
+                    <span key={partIndex} style={style} className="text-white">
                       {part}
                     </span>
                   );
@@ -336,7 +337,7 @@ export default function AnimatedCode({ code, style }) {
           fontFamily: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace',
           fontSize: isMobile ? "11px" : "14px",
           height: terminalHeight,
-          overflowY: "auto",
+          // overflowY: "auto",
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-start",
@@ -348,7 +349,7 @@ export default function AnimatedCode({ code, style }) {
             marginBottom: "8px",
             display: "flex",
             alignItems: "center",
-            paddingTop: "6px",
+            paddingTop: isMobile ? "0px" : "6px",
           }}
         >
           <span style={{ color: "#ff6b6b", marginRight: "4px" }}>λ</span>
@@ -372,7 +373,7 @@ export default function AnimatedCode({ code, style }) {
                   >
                     run
                   </span>
-                  <span style={{ color: "#b3b3b3" }}> make_payment.ts</span>
+                  <span style={{ color: "#b3b3b3" }}>{" "}makePayment.ts</span>
                 </>
               ) : (
                 <span style={{ color: "#b3b3b3" }}>{typedCommand}</span>
@@ -386,13 +387,13 @@ export default function AnimatedCode({ code, style }) {
             <div
               style={{
                 maxWidth: isMobile ? "100%" : "49%",
-                margin: isMobile ? "4px 0" : "0 0px",
+                // margin: isMobile ? "4px 0" : "0 0px",
                 padding: "8px",
                 borderRadius: "4px",
                 backgroundColor: "rgba(255, 255, 255, 0.05)",
                 color: "#b3b3b3",
                 display: "flex",
-                flexDirection: isMobile ? "column" : "row",
+                // flexDirection: isMobile ? "column" : "row",
                 alignItems: "flex-start",
                 fontSize: isMobile ? "10px" : "inherit",
               }}
@@ -425,6 +426,7 @@ export default function AnimatedCode({ code, style }) {
             >
               <SuccessIcon />
               <span
+                className="whitespace-pre"
                 style={{
                   color: "#2ecc71",
                   fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',

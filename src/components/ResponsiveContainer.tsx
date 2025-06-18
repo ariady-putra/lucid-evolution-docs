@@ -14,7 +14,7 @@ export default function ResponsiveContainer({ children }) {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  return <div className="flex flex-col justify-between items-center gap-4 md:flex-row md:justify-start md:items-start md:gap-8"
+  return <div className="flex flex-col justify-between items-center gap-4 md:flex-row md:justify-start md:gap-8"
   >
     {children.map((child, index) => (
       <div
